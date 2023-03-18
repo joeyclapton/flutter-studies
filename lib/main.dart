@@ -113,3 +113,40 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+class WidgetWithoutState extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FlutterLogo();
+  }
+}
+
+class WidgetWithState extends StatefulWidget {
+  @override
+  _WidgetWithState createState() {
+    return _WidgetWithState();
+  }
+}
+
+class _WidgetWithState extends State<WidgetWithState> {
+  var _size = 32.0;
+
+  void increment() {
+    setState(() {
+      _size = _size + 16;
+    });
+  }
+
+  void decrease() {
+    if(_size >= 16.0) {
+      setState(() {
+        _size = _size - 16;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FlutterLogo();
+  }
+}
